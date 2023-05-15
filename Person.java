@@ -23,7 +23,7 @@ public abstract class Person {
     @Override
     public String toString(){
         return "Buerger ID : " + getBuerger_id() + "\nName : " + getName() + " " + getNachname()
-                + "\nAlter : " + getAlter();
+                + "\nAge : " + getAlter();
     }
 
     @Override
@@ -42,12 +42,12 @@ public abstract class Person {
     }
     public static boolean checkName(String name){
         if (name.length() < 2){
-            System.out.println("Namen müssen eine Länge von mindestens 2 haben ");
+            System.out.println("Names must contain at least 2 letter.");
             return false;
         }
         for (int i = 0; i < name.length(); i++){
             if (!Character.isAlphabetic(name.charAt(i)) && name.charAt(i) !=' ' && name.charAt(i) != '.'){
-                System.out.println("Namen dürfen nur aus Buchstaben, Punkt-Zeichen und Leerzeichen bestehen.");
+                System.out.println("Names can only consist of letters, periods, and spaces.");
                 return false;
             }
         }
@@ -55,16 +55,16 @@ public abstract class Person {
     }
     public static boolean checkBuergerID(String bId){
         if (bId.length() < 7){
-            System.out.println("Buerger ID muss aus 7 Ziffer besthen.");
+            System.out.println("BuergerID must consist of 7 digits.");
             return false;
         }
         else if (bId.charAt(0) == '0'){
-            System.out.println("Erste Ziffer kann nicht null sein.");
+            System.out.println("First digit cannot be zero.");
             return false;
         }
         for (int i = 0;i < bId.length(); i++){
             if (!Character.isDigit(bId.charAt(i))){
-                System.out.println("Bitte geben Sie nur Number ein.");
+                System.out.println("Please enter number only.");
                 return false;
             }
         }

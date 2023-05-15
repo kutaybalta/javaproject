@@ -10,113 +10,113 @@ class Main{
         
         int operation = 0;
         while(operation != 100){
-            System.out.println("Welche Operation moechten Sie durchfuehren?");
-            System.out.println("  1- Mitarbeiter hinzufuegen");
-            System.out.println("  2- Mitarbeiter auflisten");
-            System.out.println("  3- Mitarbeiter Suchen");//
-            System.out.println("  4- Kunde hinzufuegen");
-            System.out.println("  5- Kunden auflisten");//
-            System.out.println("  6- Kunden Suchen");
-            System.out.println("  100 - Programm beenden");
+            System.out.println("Which operation you want to run ?");
+            System.out.println("  1- Add Worker");
+            System.out.println("  2- List Workers");
+            System.out.println("  3- Search Workers");//
+            System.out.println("  4- Add Customer");
+            System.out.println("  5- List Customers");//
+            System.out.println("  6- Search Customers");
+            System.out.println("  100 - End the program");
             operation = scanner.nextInt();
             scanner.nextLine();
 
-            if(operation == 1){ //Mitarbeiter Ekleme
+            if(operation == 1){ //Add Worker
                 String bId = "";
                 String name = "";
                 String nachname = "";
                 do{
-                    System.out.println("Bitte geben Sie 7 Digit Buerger ID ein: ");
+                    System.out.println("Please enter 7 digit BuergerID :");
                     bId = scanner.nextLine();
                 }while (!Person.checkBuergerID(bId));
                 do{
-                    System.out.println("Bitte geben Sie Name ein: ");
+                    System.out.println("Please enter name : ");
                     name = scanner.nextLine();
                 }while (!Person.checkName(name));
                 do{
-                    System.out.println("Bitte geben Sie Nachname ein: ");
+                    System.out.println("Please enter last name: ");
                     nachname = scanner.nextLine();
                 }while (!Person.chechNachname(nachname));
-                System.out.println("Bitte geben Sie Alter ein: ");
+                System.out.println("Please enter age: ");
                 int alter = scanner.nextInt(); scanner.nextLine();
-                System.out.println("Bitte geben Sie Position ein: ");
+                System.out.println("Please enter position: ");
                 String position = scanner.nextLine();
                 Mitarbeiter m = new Mitarbeiter(name,nachname,bId,alter,position);
                 mitarbeiter.add(m);
             }
-            else if (operation == 2){ //Mitarbeiter Yazdirma
+            else if (operation == 2){ //List Workers
                 if (mitarbeiter.size() != 0){
                     for(int i = 0; i < mitarbeiter.size(); i++){
                         System.out.println("\n" + mitarbeiter.get(i) + "\n");
                     }
                 }
                 else{
-                    System.out.println("Es gibt kein Mitarbeiter.");
+                    System.out.println("No workers found.");
                 }
             }
-            else if ( operation == 3){ //Mitarbeiter Arama
+            else if ( operation == 3){ //Search Workers
                 if(mitarbeiter.size() == 0){
-                    System.out.println("Es gibt kein Mitarbeiter");
+                    System.out.println("No workers found");
                 }
                 else{
                     String checkID;
                     do {
-                        System.out.println("Bitte geben Sie BuergerID ein: ");
+                        System.out.println("Please enter BuergerID :");
                         checkID = scanner.nextLine();
                     }while (!Person.checkBuergerID(checkID));
                     int index = mitarbeiter.indexOf(new Mitarbeiter(checkID));
                     if (index == -1){
-                        System.out.println("Person konnte nicht gefunden werden");
+                        System.out.println("Person cannot be found");
                     }else {
                         System.out.println("\n" + mitarbeiter.get(index) + "\n");
                     }
                 }
             }
-            else if (operation == 4){ //Kunde ekleme
+            else if (operation == 4){ //Add Customer
                 String bId = "";
                 String name = "";
                 String nachname = "";
                 do{
-                    System.out.println("Bitte geben Sie 7 Digit Buerger ID ein: ");
+                    System.out.println("Please enter 7 digit BuergerID :");
                     bId = scanner.nextLine();
                 }while (!Person.checkBuergerID(bId));
                 do{
-                    System.out.println("Bitte geben Sie Name ein: ");
+                    System.out.println("Please enter name : ");
                     name = scanner.nextLine();
                 }while (!Person.checkName(name));
                 do{
-                    System.out.println("Bitte geben Sie Nachname ein: ");
+                    System.out.println("Please enter last name: ");
                     nachname = scanner.nextLine();
                 }while (!Person.chechNachname(nachname));
-                System.out.println("Bitte geben Sie Alter ein: ");
+                System.out.println("Please enter age: ");
                 int alter = scanner.nextInt(); scanner.nextLine();
-                System.out.println("Haben Sie Führerschein? \ntrue or false");
+                System.out.println("Do you have a driver's license?\ntrue or false");
                 boolean hatFührerschein = scanner.nextBoolean();    
                 Kunde k = new Kunde(name,nachname,bId,alter,hatFührerschein);
                 kunden.add(k);
             }
-            else if (operation == 5){ //Kunde yazrdirma
+            else if (operation == 5){ //List Customers
                 if (kunden.size() != 0){
                     for(int i =0; i <kunden.size(); i++){
                         System.out.println("\n" + kunden.get(i) + "\n");
                     }
                 }
                 else{
-                    System.out.println("Es gibt kein Kunden ");
+                    System.out.println("No customers found ");
                 }
-            } else if (operation == 6) { //Kunde arama
+            } else if (operation == 6) { //Search Customers
                 if (kunden.size() == 0){
-                    System.out.println("Es gibt kein Kunden");
+                    System.out.println("No customers found");
                 }
                 else {
                     String checkID;
                     do {
-                        System.out.println("Bitte geben Sie BuergerID ein: ");
+                        System.out.println("Please enter BuergerID : ");
                         checkID = scanner.nextLine();
                     }while (!Person.checkBuergerID(checkID));
                     int index = kunden.indexOf(new Kunde(checkID));
                     if (index == -1){
-                        System.out.println("Person konnte nicht gefunden werden");
+                        System.out.println("Person cannot be found");
                     }else {
                         System.out.println("\n" + kunden.get(index) + "\n");
                     }
