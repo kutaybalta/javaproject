@@ -10,8 +10,17 @@ public class Mitarbeiter extends Person{
         this.position = position;
     }
 
+
     public void setPosition(String position){
-        this.position = position;
+        if (position.equalsIgnoreCase("Manager")) {
+            this.position = "Manager";
+        }else if (position.equalsIgnoreCase("Counsellor")) {
+            this.position = "Counsellor";
+        }else if (position.equalsIgnoreCase("Guide")) {
+            this.position = "Tour Guide";
+        }else {
+            this.position = "Unknown position";
+        }
     }
 
     public String getPosition(){
