@@ -8,7 +8,7 @@ To run this program, you need to have Java installed on your system. Make sure y
 
 ## Getting Started
 
-1. Clone the repository or download the Java file (`Main.java`) to your local machine.
+1. Clone the repository to your local machine.
 2. Open the command prompt or terminal and navigate to the directory where you saved the Java file.
 
 ## Running the Program
