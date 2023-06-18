@@ -108,7 +108,7 @@ class Main {
                     scanner.nextLine();
                     continue;
                 }
-                System.out.println("Do you have a driver's license? (true or false)");
+                System.out.println("Does Customer has a driver's license? (true or false)");
                 boolean hatFührerschein = scanner.nextBoolean();
                 Kunde k = new Kunde(name, nachname, bId, alter, hatFührerschein);
                 kunden.add(k);
@@ -137,12 +137,18 @@ class Main {
                     }
                 }
             } else if (operation == 7) { // Add Travel Package
-                System.out.println("Please enter a package ID: ");
-                String paketID = scanner.nextLine();
+                String paketID;
+                do {
+                    System.out.println("Please enter a package ID: ");
+                    paketID = scanner.nextLine();
+                }while(!Reisepaket.checkPaketID(paketID));
                 System.out.println("Please enter a destination: ");
                 String destination = scanner.nextLine();
-                System.out.println("Please enter the date in the format DD/MM/YYYY: ");
-                String datum = scanner.nextLine();
+                String datum;
+                do {
+                    System.out.println("Please enter the date in the format DD/MM/YYYY: ");
+                    datum = scanner.nextLine();
+                }while(!Reisepaket.checkDatum(datum));
                 int dauer = 0;
                 int preis = 0;
                 System.out.println("Please enter the duration in days: ");
