@@ -1,49 +1,91 @@
-Travel Management System
+# Travel Agency Management System
 
-This Java program implements a basic travel management system. It allows users to perform various operations related to employees, customers, and travel packages. The program provides a menu-based interface for users to interact with.
-Features
+The Travel Agency Management System is a terminal based Java program that allows users to manage employees, customers, and travel packages for a travel agency. It provides a user-friendly menu-driven interface for performing various operations. This README file provides detailed information on how to run the program, its features, and usage instructions.
 
-The program offers the following features:
+## Prerequisites
 
-    Add Employee: Allows the user to add an employee to the system by providing the necessary details such as Citizen ID, name, last name, age, and position.
-    List Employees: Lists all the employees currently stored in the system.
-    Search Employees: Searches for an employee based on their Citizen ID.
-    Add Customer: Enables the user to add a customer to the system by entering their Citizen ID, name, last name, age, and whether they have a driver's license.
-    List Customers: Lists all the customers currently stored in the system.
-    Search Customers: Searches for a customer based on their Citizen ID.
-    Add Travel Package: Allows the user to add a travel package to the system by specifying the package ID, destination, date, duration, and price.
-    List All Travel Packages: Lists all the travel packages currently stored in the system.
-    Search Travel Package: Searches for a travel package based on its package ID.
-    Change Travel Package Price: Modifies the price of a specific travel package.
+To run this program, you need to have Java installed on your system. Make sure you have a compatible Java Development Kit (JDK) installed.
 
-Usage
+## Getting Started
 
-    The program starts by displaying a menu of available operations.
-    Enter the number corresponding to the operation you want to perform.
-    Follow the prompts and provide the required information based on the chosen operation.
-    Repeat steps 2 and 3 as desired until you enter "100" to end the program.
+1. Clone the repository or download the Java file (`Main.java`) to your local machine.
+2. Open the command prompt or terminal and navigate to the directory where you saved the Java file.
 
-Note: The program performs input validation to ensure the correctness of the provided data. If invalid data is entered, appropriate error messages will be displayed, and the user will be prompted to enter valid data.
-Getting Started
+## Running the Program
 
-To run this program on your local machine, follow these steps:
+1. Compile the Java file by executing the following command:
 
-    Make sure you have Java installed on your system.
-    Copy the code into a file named Main.java.
-    Open a command prompt or terminal window and navigate to the directory where you saved the file.
-    Compile the code by executing the command: javac Main.java
-    Run the program with the command: java Main
+   ```shell
+   javac Main.java
+   ```
 
-Dependencies
+2. Run the compiled program using the following command:
 
-This program uses the following Java classes and libraries:
+   ```shell
+   java Main
+   ```
 
-    java.util.ArrayList: Used to store collections of objects.
-    java.util.InputMismatchException: Used to handle input mismatch exceptions.
-    java.util.Scanner: Used to read user input from the console.
+## Features and Usage
 
-Limitations
+The Travel Agency Management System provides the following features:
 
-    The program does not provide persistence, meaning that all data will be lost once the program is terminated.
-    The program does not include advanced search functionality, such as searching by name or filtering based on specific criteria.
-    Error handling is limited to input validation and basic exception handling. More advanced error handling could be implemented for production use.
+### 1. Add Employee
+
+To add a new employee to the system, select option 1 from the menu. The program will prompt you to enter the employee's details, including a 7-digit Citizen ID, name, last name, age, and position.
+
+### 2. List Employees
+
+To display a list of all employees, select option 2 from the menu. The program will show the details of each employee stored in the system.
+
+### 3. Search Employees
+
+To search for a specific employee by their Citizen ID, select option 3 from the menu. Enter the Citizen ID when prompted, and the program will display the details of the employee if found.
+
+### 4. Add Customer
+
+To add a new customer to the system, select option 4 from the menu. You will be asked to enter the customer's details, including a 7-digit Citizen ID, name, last name, age, and whether they have a driver's license.
+
+### 5. List Customers
+
+To view a list of all customers, select option 5 from the menu. The program will show the details of each customer stored in the system.
+
+### 6. Search Customers
+
+To search for a specific customer by their Citizen ID, choose option 6 from the menu. Enter the Citizen ID when prompted, and the program will display the details of the customer if found.
+
+### 7. Add Travel Package
+
+To add a new travel package to the system, select option 7 from the menu. You will be prompted to enter the package ID, destination, date (in the format DD/MM/YYYY), duration in days, and price.
+
+### 8. List All Travel Packages
+
+To view a list of all travel packages, select option 8 from the menu. The program will display the details of each travel package stored in the system.
+
+### 9. Search Travel Package
+
+To search for a specific travel package by its package ID, select option 9 from the menu. Enter the package ID when prompted, and the program will display the details of the travel package if found.
+
+### 10. Change Travel Package Price
+
+To modify the price of a travel package, choose option 10 from the menu. You will be asked to enter the package ID of the travel package you want to modify, as well as the new price.
+
+### 11. Add Travel Package to Customer
+
+To assign a travel package to a customer, select option 11 from the menu. Enter the package ID and the Citizen ID of the customer when prompted. The program will associate the travel package with the customer.
+
+### 12. List User's All Travel Packages
+
+To view all travel packages associated with a specific customer, choose option 12 from the menu. Enter the
+
+ Citizen ID of the customer when prompted, and the program will display the details of all the travel packages assigned to that customer.
+
+### 100. End the program
+
+To terminate the program, select option 100 from the menu. The program will exit gracefully.
+
+## Note
+
+- When entering Citizen IDs, make sure to input a 7-digit number.
+- Date inputs should be in the format DD/MM/YYYY.
+
+Please note that this program is a basic implementation and does not include error handling for all possible scenarios. It aims to provide a functional demonstration of a travel agency management system. You can explore the program and perform various operations using the menu provided.
