@@ -22,6 +22,8 @@ class Main {
             System.out.println("  8- List All Travel Packages");
             System.out.println("  9- Search Travel Package");
             System.out.println("  10- Change Travel Package Price");
+            System.out.println("  11- Add Travel Package to Customer");
+            System.out.println("  12- List Users All Travel Packages");
             System.out.println("  100 - End the program");
 
             try {
@@ -205,7 +207,60 @@ class Main {
                         reisepaket.get(index).setPreis(preis);
                     }
                 }
+            } else if (operation == 11) { // Add Travel Packages to a Customer
+                if (reisepaket.size() == 0) {
+                    System.out.println("No travel packages found.");
+                }
+                else if (kunden.size() == 0) {
+                    System.out.println("No customers found.");
+                }
+                else {
+                    System.out.println("PLease enter the package ID: ");
+                    String checkID = scanner.nextLine();
+                    String checkBID;
+                    do {
+                        System.out.println("Please enter a Citizen ID: ");
+                        checkBID = scanner.nextLine();
+                    }while(!Person.checkBuergerID(checkBID));
+                    int index = reisepaket.indexOf(new Reisepaket(checkID));
+                    int customerIndex = kunden.indexOf(new Kunde(checkBID));
+                    if (index == -1) {
+                        System.out.println("Travel package cannot be found.");
+                    }
+                    else if (customerIndex == -1) {
+                        System.out.println("Person cannot be found.");
+                    }
+                    else {
+                        kunden.get(customerIndex).setKundenPaketen(reisepaket.get(index));
+                    }
+                }
+            } else if (operation == 12) { // List Customers Travel Packages
+                if (kunden.size() == 0) {
+                    System.out.println("No Customer found.");
+                }
+                else {
+                    String checkBID;
+                    do {
+                        System.out.println("Please enter a Citizen ID: ");
+                        checkBID = scanner.nextLine();
+                    }while (!Person.checkBuergerID(checkBID));
+                    int kundenIndex = kunden.indexOf(new Kunde(checkBID));
+                    if (kundenIndex == -1){
+                        System.out.println("Person cannot be found.");
+                    }else {
+                        if (kunden.get(kundenIndex).getKundenPaketen().size() == 0){
+                            System.out.println("This Customer has no packages.");
+                        }
+                        else {
+                            for (int i = 0; i < kunden.get(kundenIndex).getKundenPaketen().size(); i++){
+                                System.out.println("\n" + kunden.get(kundenIndex).getKundenPaketen().get(i) + "\n");
+                            }
+                        }
+                    }
+                }
             }
+             
+            
         }
     }
 }
